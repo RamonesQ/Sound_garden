@@ -13,21 +13,23 @@ form.onsubmit = async (evento) =>{
    
     const novoEvento = {
        name: inputNome.value,
-       poster: "",
-       attractions: inputAtracoes.value,
+       poster: "link da imagem",
+       attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
-       scheduled: inputData.value,
-       number_tickets: inputLotacao.value 
+       scheduled: new Date (inputData.value).toISOString(),
+       number_tickets: parseInt(inputLotacao.value) 
     };
 
     const options = {
         method: 'POST',
-        body: novoEvento,
+        body: JSON.stringify(novoEvento),
         headers: {
             "Content-Type": "application/json",
           },
     };
 
     await fetch(`${BASE_URL}/events`, options);
-    console.log(novoEvento)
+
+    alert("Deu bom")
 }
+
