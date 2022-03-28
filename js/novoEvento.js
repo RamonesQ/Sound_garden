@@ -10,7 +10,8 @@ const form = document.querySelector("form"); // passar para evento onclick, quan
 
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
-   
+   try {
+       
     const novoEvento = {
        name: inputNome.value,
        poster: "link da imagem",
@@ -31,5 +32,10 @@ form.onsubmit = async (evento) =>{
     await fetch(`${BASE_URL}/events`, options);
 
     alert("Deu bom")
+
+} catch (error) {
+    console.log(error)
+       alert("Deu ruim")
+}
 }
 
