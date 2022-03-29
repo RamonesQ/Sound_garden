@@ -1,4 +1,5 @@
 const inputNome = document.querySelector("#nome");
+const inputPoster = document.querySelector("#poster");
 const inputAtracoes = document.querySelector("#atracoes");
 const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
@@ -14,7 +15,7 @@ form.onsubmit = async (evento) =>{
        
     const novoEvento = {
        name: inputNome.value,
-       poster: "link da imagem",
+       poster: inputPoster.value,
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
        scheduled: new Date (inputData.value).toISOString(),
@@ -29,7 +30,9 @@ form.onsubmit = async (evento) =>{
           },
     };
 
-    await fetch(`${BASE_URL}/events`, options);
+    const resposta = await fetch(`${BASE_URL}/events`, options);
+    const conteudoResposta = await resposta.json()
+    console.log(conteudoResposta)
 
     alert("Deu bom")
 
