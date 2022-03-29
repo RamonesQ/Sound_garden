@@ -8,11 +8,33 @@ const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
 const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
 
+
+const parametrosURL = new URLSearchParams(window.location.search);
+const parametrosID = parametrosURL.get("id");
+const mostraEvento = async (e) => {
+    const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, {
+        method: "GET",
+        // redirect: "follow"
+    });
+
+ const respostaAPI = await resposta.json();    
+    console.log(respostaAPI)
+
+inputNome.value = respostaAPI.name;
+inputAtracoes.value = respostaAPI.attractions;
+inputDescricao.value = respostaAPI.description;
+inputData.value = respostaAPI.scheduled;
+inputLotacao.value = respostaAPI.number_tickets;
+};
+
+mostrarEvento();
+
+
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
    try {
        
-    const novoEvento = {
+    const editarEvento = {
        name: inputNome.value,
        poster: "link da imagem",
        attractions: inputAtracoes.value.split(","),
@@ -22,8 +44,8 @@ form.onsubmit = async (evento) =>{
     };
 
     const options = {
-        method: 'POST',
-        body: JSON.stringify(novoEvento),
+        method: 'PUT',
+        body: JSON.stringify(editarEvento),
         headers: {
             "Content-Type": "application/json",
           },
