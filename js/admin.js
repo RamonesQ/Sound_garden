@@ -18,19 +18,18 @@ const Options = {
         <td>${conteudoResposta[index].name}</td>
         <td>${conteudoResposta[index].attractions}</td>
         <td>
-            <a href="reservas.html/?id=${conteudoResposta[index]._id}" class="btn btn-dark">ver reservas</a>
-            <a href="editar-evento.html/?id=${conteudoResposta[index]._id}" class="btn btn-secondary">editar</a>
-            <a href="excluir-evento.html/?id=${conteudoResposta[index]._id}" class="btn btn-danger">excluir</a>
+            <a href="reservas.html?id=${conteudoResposta[index]._id}" class="btn btn-dark">ver reservas</a>
+            <a href="editar-evento.html?id=${conteudoResposta[index]._id}" class="btn btn-secondary">editar</a>
+            <a href="excluir-evento.html?id=${conteudoResposta[index]._id}" class="btn btn-danger">excluir</a>
         </td>
     </tr>`
-
     }
     lista.innerHTML = Admin
 };    
 
 mostrarEventos()
 
-console.log(mostrarEventos)
+
 
 
 
