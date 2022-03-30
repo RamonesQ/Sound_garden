@@ -16,7 +16,7 @@ form.onsubmit = async (evento) =>{
        
     const novoEvento = {
        name: inputNome.value,
-       poster: inputPoster.value,
+       poster: inputBanner.value,
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
        scheduled: new Date(inputData.value).toISOString(),

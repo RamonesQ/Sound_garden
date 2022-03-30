@@ -45,12 +45,12 @@ form.onsubmit = async (evento) =>{
     evento.preventDefault();
    try {
        
-    editarEvento = {
+   const editarEvento = {
        name: inputNome.value,
-       banner: "link da imagem",
+       poster: "link da imagem",
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
-       scheduled: new Date (inputData.value),
+       scheduled: new Date(inputData.value).toISOString(),
        number_tickets: parseInt(inputLotacao.value) 
     };
 
@@ -60,13 +60,15 @@ form.onsubmit = async (evento) =>{
         headers: {
             "Content-Type": "application/json",
           },
+          redirect: "follow"
     };
 
    const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, options);
    const conteudoResposta = await resposta.json();
+   console.log(conteudoResposta)
 
     alert("Deu bom")
-    // window.location.href = ("admin.html")
+    window.location.href = ("admin.html")
 } catch (error) {
     console.log(error)
        alert("Deu ruim")
