@@ -1,5 +1,5 @@
 const inputNome = document.querySelector("#nome");
-const inputPoster = document.querySelector("#poster");
+const inputBanner = document.querySelector("#banner");
 const inputAtracoes = document.querySelector("#atracoes");
 const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
@@ -37,7 +37,7 @@ form.onsubmit = async (evento) =>{
    
    console.log(conteudoResposta)
     alert("Deu bom")
-
+    window.location.href = ("admin.html")
 } catch (error) {
     console.log(error)
        alert("Deu ruim")
