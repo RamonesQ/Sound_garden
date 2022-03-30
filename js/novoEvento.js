@@ -4,6 +4,7 @@ const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
 
+
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
 const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
@@ -17,7 +18,7 @@ form.onsubmit = async (evento) =>{
        poster: "link da imagem",
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
-       scheduled: new Date (inputData.value).toISOString(),
+       scheduled: new Date(inputData.value).toISOString(),
        number_tickets: parseInt(inputLotacao.value) 
     };
 
@@ -27,10 +28,12 @@ form.onsubmit = async (evento) =>{
         headers: {
             "Content-Type": "application/json",
           },
+          redirect: "follow"
     };
 
    const resposta = await fetch(`${BASE_URL}/events`, options);
    const conteudoResposta = await resposta.json();
+   
    console.log(conteudoResposta)
     alert("Deu bom")
 
