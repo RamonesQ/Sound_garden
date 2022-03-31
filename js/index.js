@@ -1,13 +1,34 @@
+const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
+
+const mostrarEventos = async() => { 
+    const listaDeEventos =  document.querySelector("#eventos")
+const Options = {
+    method :'GET',
+    redirect :'follow',
+};
+    const request = await fetch (`${BASE_URL}/events`, Options)
+    const conteudoResposta = await request.json();
+
+    const eventos = conteudoResposta.slice(0,3);
+    eventos.forEach(item => { listaDeEventos.innerHTML +=  `
+    <article class="evento card p-5 m-3">
+    <h2>${item.name}${item.scheduled}</h2>
+    <h4>${item.attractions}</h4>
+    <p>${item.description}.</p>
+    <a href="#" id="myBtn" class="btn btn-primary">reservar ingresso</a>
+    </article>`
+    });
+
+};    
+
+mostrarEventos()
+
 
 // Get the modal
 var modal = document.getElementById("myModal");
 
-var btnReserva = document.getElementsByClassName("btn btn-primary");
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-// var btn1 = document.getElementById("myBtn1");
-// var btn2 = document.getElementById("myBtn2");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -16,13 +37,6 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
     modal.style.display = "block";
 }
-// btn1.onclick = function () {
-//     modal.style.display = "block";
-// }
-// btn2.onclick = function () {
-//     modal.style.display = "block";
-// }
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
@@ -34,5 +48,3 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-
-console.log(btn)
