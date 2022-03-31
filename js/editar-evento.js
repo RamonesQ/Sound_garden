@@ -1,12 +1,12 @@
 let editarNome = document.querySelector("#nome");
-let editarBanner = document.querySelector("#banner");
+let editarBanner = document.querySelector("#poster");
 let editarAtracoes = document.querySelector("#atracoes");
 let editarDescricao = document.querySelector("#descricao");
 let editarData = document.querySelector("#data");
 let editarLotacao = document.querySelector("#lotacao");
 
 const inputNome = document.querySelector("#nome");
-const inputBanner = document.querySelector("#banner");
+const inputBanner = document.querySelector("#poster");
 const inputAtracoes = document.querySelector("#atracoes");
 const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
@@ -27,7 +27,7 @@ const mostrarEvento = async () => {
 
     editarNome.value = respostaAPI.name;
     editarAtracoes.value = respostaAPI.attractions;
-    editarBanner.value = respostaAPI.Banner;
+    editarBanner.value = respostaAPI.poster;
     editarDescricao.value = respostaAPI.description;
     editarData.value = respostaAPI.scheduled;
     editarLotacao.value = respostaAPI.number_tickets;
