@@ -2,7 +2,7 @@ const reservaNome = document.querySelector("#nome");
 const reservaEmail = document.querySelector("#e-mail");
 const reservaLotacao = document.querySelector("#lotacao");
 
-const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com/";
+const BASE_URL2 = "https://xp41-soundgarden-api.herokuapp.com/";
 
 const form = document.querySelector("form");
 
@@ -24,7 +24,7 @@ form.onsubmit = async (evento) => {
             redirect: "follow",
         };
 
-        const resposta = await fetch(`${BASE_URL}/bookings`, options);
+        const resposta = await fetch(`${BASE_URL2}/bookings`, options);
         const conteudoResposta = await resposta.json();
 
         console.log(conteudoResposta);
