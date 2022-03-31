@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-body{
-    font-family: 'Questrial', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+body {
+    font-family: "Questrial", sans-serif;
 }
 
 .img-responsive {
@@ -17,20 +17,21 @@ aside {
     min-height: 100vh;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: #C2185B;
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #c2185b;
 }
 
-.btn-primary{
-    background-color: #C2185B;
-    border-color: #C2185B;
+.btn-primary {
+    background-color: #c2185b;
+    border-color: #c2185b;
 }
 
 main.login {
     width: 400px;
 }
 
-section.full{
+section.full {
     width: 100%;
     min-height: 80vh;
     padding: 50px 0;
@@ -40,12 +41,12 @@ article.evento {
     width: 350px;
 }
 
-footer nav ul{
+footer nav ul {
     list-style: none;
     display: flex;
 }
 
-footer nav ul li  {
+footer nav ul li {
     padding: 10px;
 }
 .modal {
@@ -58,12 +59,12 @@ footer nav ul li  {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -71,24 +72,38 @@ footer nav ul li  {
     width: 40%;
     display: flex;
     align-items: center;
-  }
+}
 
-  .botoes{
+.botoes {
     align-items: center;
     justify-content: space-around;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+.buttonCancelar {
+    background: #fff;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border: 2px solid rgb(211, 210, 210);
+    border-radius: 3px;
+}
+
+.buttonCancelar:hover {
+    background: rgba(11, 94, 215);
+    border: 2px solid rgba(11, 94, 215);
+    color: #fff;
+}
