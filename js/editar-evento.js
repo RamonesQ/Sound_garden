@@ -14,13 +14,7 @@ const inputLotacao = document.querySelector("#lotacao");
 
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
-
-// function pegaId(){
-//     const url = new URL(window.location.href)
-//     const id = url.searchParams.get('_id')
-//     return id
-// }
+const form = document.querySelector("form");
 
 const parametrosURL = new URLSearchParams(window.location.search);
 const parametrosID = parametrosURL.get("id");
@@ -28,8 +22,7 @@ const parametrosID = parametrosURL.get("id");
 const mostrarEvento = async () => {
     const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, {method: "GET"});
     const respostaAPI = await resposta.json();    
-    
-    
+     
 
 editarNome.value = respostaAPI.name;
 editarAtracoes.value = respostaAPI.attractions;
@@ -45,12 +38,12 @@ form.onsubmit = async (evento) =>{
     evento.preventDefault();
    try {
        
-    editarEvento = {
+   const editarEvento = {
        name: inputNome.value,
-       banner: "link da imagem",
+       poster: "link da imagem",
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
-       scheduled: new Date (inputData.value),
+       scheduled: new Date(inputData.value).toISOString(),
        number_tickets: parseInt(inputLotacao.value) 
     };
 
@@ -60,13 +53,15 @@ form.onsubmit = async (evento) =>{
         headers: {
             "Content-Type": "application/json",
           },
+          redirect: "follow"
     };
 
    const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, options);
    const conteudoResposta = await resposta.json();
+   console.log(conteudoResposta)
 
     alert("Deu bom")
-    // window.location.href = ("admin.html")
+    window.location.href = ("admin.html")
 } catch (error) {
     console.log(error)
        alert("Deu ruim")

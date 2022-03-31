@@ -8,7 +8,7 @@ const inputLotacao = document.querySelector("#lotacao");
 
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
+const form = document.querySelector("form"); 
 
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
@@ -16,7 +16,7 @@ form.onsubmit = async (evento) =>{
        
     const novoEvento = {
        name: inputNome.value,
-       poster: "link da imagem",
+       poster: inputBanner.value,
        attractions: inputAtracoes.value.split(","),
        description: inputDescricao.value,
        scheduled: new Date(inputData.value).toISOString(),
