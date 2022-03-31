@@ -1,34 +1,33 @@
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-const mostrarEventos = async() => { 
-    const listaDeEventos =  document.querySelector("#eventos")
-const Options = {
-    method :'GET',
-    redirect :'follow',
-};
-    const request = await fetch (`${BASE_URL}/events`, Options)
+const mostrarEventos = async () => {
+    const listaDeEventos = document.querySelector("#eventos");
+    const Options = {
+        method: "GET",
+        redirect: "follow",
+    };
+    const request = await fetch(`${BASE_URL}/events`, Options);
     const conteudoResposta = await request.json();
 
-    const eventos = conteudoResposta.slice(0,3);
-    eventos.forEach(item => { listaDeEventos.innerHTML +=  `
+    const eventos = conteudoResposta.slice(0, 3);
+    eventos.forEach((item) => {
+        listaDeEventos.innerHTML += `
     <article class="evento card p-5 m-3">
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
     <a href="#" class="btn btn-primary">reservar ingresso</a>
-    </article>`
+    </article>`;
     });
+};
 
-};    
-
-mostrarEventos()
+mostrarEventos();
 
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementsByClassName("btn btn-primary");
-
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

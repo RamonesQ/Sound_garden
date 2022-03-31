@@ -107,3 +107,20 @@ footer nav ul li {
     border: 2px solid rgba(11, 94, 215);
     color: #fff;
 }
+
+@media all and (max-width: 1024px) {
+    body header p {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .col img {
+        display: block;
+    }
+}
+
+@media all and (max-width: 768px) {
+}
+
+@media all and (max-width: 425px) {
+}
