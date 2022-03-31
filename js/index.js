@@ -15,7 +15,7 @@ const Options = {
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="#" class="btn btn-primary">reservar ingresso</a>
+    <a href="novaReserva.html?id=${item._id}" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
 
@@ -29,15 +29,14 @@ var modal = document.getElementById("myModal");
 // Get the button that opens the modal
 var btn = document.getElementsByClassName("btn btn-primary");
 
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 [].forEach.call(btn, function (event) {
     event.onclick = function () {
         modal.style.display = "block";
     };
 });
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {

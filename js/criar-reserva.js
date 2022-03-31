@@ -2,9 +2,22 @@ const reservaNome = document.querySelector("#nome");
 const reservaEmail = document.querySelector("#e-mail");
 const reservaLotacao = document.querySelector("#lotacao");
 
-const BASE_URL2 = "https://xp41-soundgarden-api.herokuapp.com/";
+const BASE_URL2= "https://xp41-soundgarden-api.herokuapp.com";
 
 const form = document.querySelector("form");
+
+const parametrosURL = new URLSearchParams(window.location.search);
+const parametrosID = parametrosURL.get("id");
+
+const mostrarReservas = async() => { 
+    await fetch(`${BASE_URL2}/bookings/${parametrosID}`, {
+        method: "GET",
+    });
+};
+
+mostrarReservas();
+
+
 
 form.onsubmit = async (evento) => {
     evento.preventDefault();
