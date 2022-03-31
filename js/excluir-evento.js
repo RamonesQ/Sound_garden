@@ -7,13 +7,8 @@ let editarLotacao = document.querySelector("#lotacao");
 
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
+const form = document.querySelector("form");
 
-// function pegaId(){
-//     const url = new URL(window.location.href)
-//     const id = url.searchParams.get('_id')
-//     return id
-// }
 
 const parametrosURL = new URLSearchParams(window.location.search);
 const parametrosID = parametrosURL.get("id");
@@ -31,7 +26,6 @@ editarLotacao.value = respostaAPI.number_tickets;
 
 mostrarEvento();
 
-
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
   await fetch(`${BASE_URL}/events/${parametrosID}`, {method: "DELETE"});
@@ -39,7 +33,3 @@ form.onsubmit = async (evento) =>{
  alert ("Deu bom! porra!!!")
 window.location.href = ("admin.html")
 }
-//    const resposta = await fetch(`${BASE_URL}/events${parametrosID}}`, options);
-//    const conteudoResposta = await resposta.json();
-//    console.log(conteudoResposta)
-

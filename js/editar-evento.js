@@ -14,13 +14,7 @@ const inputLotacao = document.querySelector("#lotacao");
 
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
-const form = document.querySelector("form"); // passar para evento onclick, quando acionado o botão enviar
-
-// function pegaId(){
-//     const url = new URL(window.location.href)
-//     const id = url.searchParams.get('_id')
-//     return id
-// }
+const form = document.querySelector("form");
 
 const parametrosURL = new URLSearchParams(window.location.search);
 const parametrosID = parametrosURL.get("id");
