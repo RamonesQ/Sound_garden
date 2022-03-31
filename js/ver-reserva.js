@@ -18,9 +18,7 @@ const Options = {
         <td>${conteudoResposta[index].owner_email}</td>
         <td>${conteudoResposta[index].number_tickets}</td>
         <td>
-            <a href="reservas.html?id=${conteudoResposta[index]._id}" class="btn btn-dark">ver reservas</a>
-            <a href="editar-evento.html?id=${conteudoResposta[index]._id}" class="btn btn-secondary">editar</a>
-            <a href="excluir-evento.html?id=${conteudoResposta[index]._id}" class="btn btn-danger">excluir</a>
+            <a href="excluir-reserva.html?id=${conteudoResposta[index]._id}" class="btn btn-danger">excluir</a>
         </td>
     </tr>`
     }
