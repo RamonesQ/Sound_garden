@@ -47,7 +47,7 @@ form.onsubmit = async (evento) =>{
    const conteudoResposta = await resposta2.json();
    
    console.log(conteudoResposta)
-    alert("Evento criado com sucesso!")
+    alert("Reserva criada! Aproveite o show!")
     window.location.href = ("index.html")
 } catch (error) {
     console.log(error)
