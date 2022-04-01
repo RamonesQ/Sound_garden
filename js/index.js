@@ -15,7 +15,7 @@ const Options = {
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="novaReserva.html?id=${item._id}" class="btn btn-primary">reservar ingresso</a>
+    <a href="#" id="myBtn" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
 // Get the modal
@@ -36,14 +36,13 @@ botao.onclick = function (evento) {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
-};
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-    if (event.target == modal || event.target.className == "buttonCancelar") {
+    if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 };    
 mostrarEventos()
-

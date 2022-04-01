@@ -15,50 +15,20 @@ const Options = {
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="#" class="btn btn-primary">reservar ingresso</a>
+    <a href="${BASE_URL}/bookings/${item._id}" id="myBtn" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
-
-};    
-
-mostrarEventos()
-
-    // <a href="${BASE_URL}/bookings/${item._id}" id="myBtn" class="btn btn-primary">reservar ingresso</a>
-    // </article>`
-    // });
 
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementsByClassName("btn btn-primary");
-
 var btn = document.querySelectorAll("#myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// [].forEach.call(btn, function (event) {
-//     event.onclick = function () {
-//         modal.style.display = "block";
-//     };
-// });
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function () {
-//     modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == modal || event.target.className == "buttonCancelar") {
-//         modal.style.display = "none";
-//     }
-// };
-
-// console.log(btn);
 // When the user clicks the button, open the modal 
-
 btn.forEach ( (botao) => 
 botao.onclick = function (evento) {
     modal.style.display = "block";
@@ -77,4 +47,3 @@ window.onclick = function (event) {
 }
 };    
 mostrarEventos()
-
