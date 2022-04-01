@@ -9,15 +9,16 @@ const Options = {
     const request = await fetch (`${BASE_URL}/events`, Options)
     const conteudoResposta = await request.json();
 
-    const eventos = conteudoResposta.slice(0,3);
+    const eventos = conteudoResposta.slice(0,6);
     eventos.forEach(item => { listaDeEventos.innerHTML +=  `
     <article class="evento card p-5 m-3">
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="#" id="myBtn" class="btn btn-primary">reservar ingresso</a>
+    <a href="${BASE_URL}/bookings/${item._id}" id="myBtn" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
