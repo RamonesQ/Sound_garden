@@ -18,14 +18,14 @@ const mostrarEventos = async () => {
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="#" id="botoes" class="btn btn-primary">reservar ingresso</a>
+    <a href="<a href="${BASE_URL}/bookings/${item._id}" id="myBtn" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.querySelectorAll("#botoes");
+var btn = document.querySelectorAll("#myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
