@@ -18,26 +18,21 @@ const Options = {
     <a href="novaReserva.html?id=${item._id}" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
-
-};    
-
-mostrarEventos()
-
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementsByClassName("btn btn-primary");
-
-[].forEach.call(btn, function (event) {
-    event.onclick = function () {
-        modal.style.display = "block";
-    };
-});
+var btn = document.querySelectorAll("#myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks the button, open the modal 
+btn.forEach ( (botao) => 
+botao.onclick = function (evento) {
+    modal.style.display = "block";
+    evento.preventDefault();
+})
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
@@ -48,6 +43,7 @@ window.onclick = function (event) {
     if (event.target == modal || event.target.className == "buttonCancelar") {
         modal.style.display = "none";
     }
-};
+}
+};    
+mostrarEventos()
 
-console.log(btn);
