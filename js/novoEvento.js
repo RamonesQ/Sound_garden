@@ -36,7 +36,7 @@ form.onsubmit = async (evento) =>{
    const conteudoResposta = await resposta.json();
    
    console.log(conteudoResposta)
-    alert("Deu bom")
+    alert("Evento criado com sucesso!")
     window.location.href = ("admin.html")
 } catch (error) {
     console.log(error)
