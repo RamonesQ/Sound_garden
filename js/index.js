@@ -1,4 +1,6 @@
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
+const parametrosURL = new URLSearchParams(window.location.search);
+const parametrosID = parametrosURL.get("id");
 
 const mostrarEventos = async() => { 
     const listaDeEventos =  document.querySelector("#eventos")
@@ -15,14 +17,14 @@ const Options = {
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
-    <a href="#" id="myBtn" class="btn btn-primary">reservar ingresso</a>
+    <a href="#" id="botoes" class="btn btn-primary">reservar ingresso</a>
     </article>`
     });
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.querySelectorAll("#myBtn");
+var btn = document.querySelectorAll("#botoes");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

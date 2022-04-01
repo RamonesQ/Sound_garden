@@ -1,4 +1,7 @@
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
+const parametrosURL = new URLSearchParams(window.location.search);
+const parametrosID = parametrosURL.get("id");
+
 
 const mostrarEventos = async() => { 
     const listaDeEventos =  document.querySelector("#eventos")
@@ -9,6 +12,7 @@ const Options = {
     const request = await fetch (`${BASE_URL}/events`, Options)
     const conteudoResposta = await request.json();
 
+    
     const eventos = conteudoResposta.slice(0,6);
     eventos.forEach(item => { listaDeEventos.innerHTML +=  `
     <article class="evento card p-5 m-3">
