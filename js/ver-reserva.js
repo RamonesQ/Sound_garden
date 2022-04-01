@@ -15,8 +15,8 @@ const Options = {
         Admin += `<tr>
         <th scope="row">${index}</th>
         <td>${conteudoResposta[index].owner_name}</td>
-        <td>${conteudoResposta[index].owner_email}</td>
-        <td>${conteudoResposta[index].number_tickets}</td>
+        <td class="displayRemove" >${conteudoResposta[index].owner_email}</td>
+        <td class="displayRemove" >${conteudoResposta[index].number_tickets}</td>
         <td>
             <a href="excluir-reserva.html?id=${conteudoResposta[index]._id}" class="btn btn-danger">excluir</a>
         </td>

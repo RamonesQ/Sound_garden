@@ -107,3 +107,119 @@ footer nav ul li {
     border: 2px solid rgba(11, 94, 215);
     color: #fff;
 }
+
+
+/* Responsividade mobile */
+@media (max-width:1000px){
+    #colunaImagem{
+        display: none
+    }
+    #colunaASoundGarden{
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+    };
+    #cardLP{
+        padding: 2rem !important;
+        width: 650px !important;
+    }
+    #eventos{
+        padding: 2rem !important;
+        max-width: 1000px !important;
+        display: flex;
+        flex-direction: column;
+        content: none !important;
+    }; 
+    .botoesGerenciar{
+        display: flex !important;
+        flex-direction: column !important; 
+        justify-content: center !important;
+        }
+        #remove{
+            width: 100% !important;
+            min-height: 0 !important;
+        }
+        #imagemPainel{
+            max-width: 30% !important;
+
+        }
+        #divImagem{
+            display: flex !important;
+            justify-content: center !important;
+        }
+        #divSvg{
+            display: none !important;
+        }
+        #listagemGerenciar{
+                display: flex;
+                justify-content: center;
+        }
+}
+
+@media (max-width: 450px){
+    #parteDeBaixo{
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    #navFooter{
+        display: flex !important;
+        padding: 0px !important;
+    }
+    img{
+        width: 300px !important;
+    }
+    #imagemPainel{
+        max-width: 83% !important;
+    }
+    #remove{
+        width: 100% !important;
+        min-height: 0 !important;
+    }
+    #divMain{
+        padding: 10px !important;
+    }
+    /* #listaGerenciar{
+        display: flex !important;
+        flex-direction: column !important;
+    } */
+    .listaDisplayNone{
+        display: none !important;
+
+    }
+    .displayRemove{
+        display: none !important;
+    }
+    #listagemGerenciar{
+            display: flex;
+            justify-content: center;        
+    }
+    }
+@media (max-width: 800px){
+    .listaDisplayNone{
+        display: none !important;
+
+    }
+}
+@media (max-width: 800px){
+    #remove{
+        width: 100% !important;
+        min-height: 0 !important;
+    }
+    .displayRemove{
+        display: none !important;
+    }
+}
+@media (max-width: 950px){
+    #remove{
+        width: 100% !important;
+        min-height: 0 !important;
+    }
+    .displayRemove{
+        display: none !important;
+    }
+    .listaDisplayNone{
+        display: none !important;
+
+    }
+}

@@ -14,7 +14,7 @@ const mostrarEventos = async () => {
     const eventos = conteudoResposta.slice(0, 3);
     eventos.forEach(item=> {
         listaDeEventos.innerHTML += `
-    <article class="evento card p-5 m-3">
+    <article id="cardLP" class="evento card p-5 m-3">
     <h2>${item.name}${item.scheduled}</h2>
     <h4>${item.attractions}</h4>
     <p>${item.description}.</p>
