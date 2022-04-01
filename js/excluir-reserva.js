@@ -25,7 +25,7 @@ form.onsubmit = async (evento) =>{
     evento.preventDefault();
   await fetch(`${BASE_URL}/bookings/${parametrosID}`, {method: "DELETE"});
 
- alert ("Deu bom")
+ alert ("Reserva excluída!")
 window.location.href = ("reservas.html")
 }
 
