@@ -23,9 +23,9 @@ mostrarReserva();
 
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
-  await fetch(`${BASE_URL}/events/${parametrosID}`, {method: "DELETE"});
+  await fetch(`${BASE_URL}/bookings/${parametrosID}`, {method: "DELETE"});
 
- alert ("Deu bom, porra!!!")
+ alert ("Deu bom")
 window.location.href = ("reservas.html")
 }
 

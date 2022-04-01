@@ -11,7 +11,6 @@ const inputAtracoes = document.querySelector("#atracoes");
 const inputDescricao = document.querySelector("#descricao");
 const inputData = document.querySelector("#data");
 const inputLotacao = document.querySelector("#lotacao");
-
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
 
 const form = document.querySelector("form");
@@ -20,22 +19,19 @@ const parametrosURL = new URLSearchParams(window.location.search);
 const parametrosID = parametrosURL.get("id");
 
 const mostrarEvento = async () => {
-    const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, {
-        method: "GET",
-    });
-    const respostaAPI = await resposta.json();
-
-    editarNome.value = respostaAPI.name;
-    editarAtracoes.value = respostaAPI.attractions;
-    editarBanner.value = respostaAPI.poster;
-    editarDescricao.value = respostaAPI.description;
-    editarData.value = respostaAPI.scheduled;
-    editarLotacao.value = respostaAPI.number_tickets;
+    const resposta = await fetch(`${BASE_URL}/events/${parametrosID}`, {method: "GET"});
+    const respostaAPI = await resposta.json();    
+     
+editarNome.value = respostaAPI.name;
+editarAtracoes.value = respostaAPI.attractions;
+editarDescricao.value = respostaAPI.description;
+editarData.value = respostaAPI.scheduled;
+editarLotacao.value = respostaAPI.number_tickets;
 };
 
 mostrarEvento();
 
-form.onsubmit = async (evento) => {
+form.onsubmit = async (evento) =>{
     evento.preventDefault();
     try {
         const editarEvento = {

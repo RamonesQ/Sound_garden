@@ -1,6 +1,6 @@
 const reservaNome = document.querySelector("#nome");
 const reservaEmail = document.querySelector("#e-mail");
-const reservaLotacao = documento.querySelector("#lotacao");
+const reservaLotacao = document.querySelector("#lotacao");
 
 
 const BASE_URL = "https://xp41-soundgarden-api.herokuapp.com";
@@ -9,59 +9,20 @@ const form = document.querySelector("form");
 const parametrosURL = new URLSearchParams(window.location.search);
 const parametrosID = parametrosURL.get("id");
 
-const mostrarReservas = async() => { 
-    await fetch(`${BASE_URL2}/bookings/${parametrosID}`, {
-        method: "GET",
-    });
-};
-
-mostrarReservas();
-
-
-
-form.onsubmit = async (evento) => {
-    evento.preventDefault();
-    try {
-        const novaReserva = {
-            owner_name: reservaNome.value,
-            owner_email: reservaEmail.value,
-            number_tickets: parseInt(reservaLotacao.value),
-        };
-
-        const options = {
-            method: "POST",
-            body: JSON.stringify(novaReserva),
-            headers: {
-                "Content-Type": "application/json",
-            },
-            redirect: "follow",
-        };
-
-        const resposta = await fetch(`${BASE_URL2}/bookings`, options);
-        const conteudoResposta = await resposta.json();
-
-        console.log(conteudoResposta);
-        alert("Deu bom");
-        window.location.href = "index.html";
-    } catch (error) {
-        console.log(error);
-        alert("Deu ruim");
-    }
-};
-body.onload = async (evento) =>{
+async function Lotacao(evento){
     evento.preventDefault();
    try {
-       const resposta = await fetch(`${BASE_URL}/bookings/event/${parametrosID}`, {method: "GET"})
+       const resposta = await fetch(`${BASE_URL}/event/${parametrosID}`, {method: "GET"})
        const conteudoResposta = await resposta.json();
-
-        conteudoResposta.forEach((item, index) =>{
-           
-
-        })
-        
-
-
-
+       reservaNome.innerHTML = conteudoResposta.name;
+       reservaLotacao.innerHTML = conteudoResposta.number_tickets;
+   }
+   catch(e){
+    alert("Deu ruim")
+    window.location.reload()   
+}
+}
+Lotacao()
 
 form.onsubmit = async (evento) =>{
     evento.preventDefault();
