@@ -40,7 +40,7 @@ Você pode acessar o site [aqui.](https://ramonesq.github.io/Sound_garden/)
 
 
 ## :computer: Desenvolvedores
-[<img src="https://avatars.githubusercontent.com/u/90655270?v=4" width=115> <br> <sub>Ramon Santos</sub>](https://github.com/RamonesQ) | [<img src="https://avatars.githubusercontent.com/u/92600746?v=4" width=115> <br> <sub>Rafael Garcia</sub>](https://github.com/rafaelgarnasci) | [<img src="https://avatars.githubusercontent.com/u/73663600?v=4" width=115> <br> <sub>Pedro Oliveira</sub>](https://github.com/OSrB2) | [<img src="https://avatars.githubusercontent.com/u/98442267?v=4" width=115> <br> <sub>Raphael Sá</sub>](https://github.com/rainierpironi) 
+[<img src="https://avatars.githubusercontent.com/u/90655270?v=4" width=115> <br> <sub>Ramon Santos</sub>](https://github.com/RamonesQ) | [<img src="https://avatars.githubusercontent.com/u/92600746?v=4" width=115> <br> <sub>Rafael Garcia</sub>](https://github.com/rafaelgarnasci) | [<img src="https://avatars.githubusercontent.com/u/73663600?v=4" width=115> <br> <sub>Pedro Oliveira</sub>](https://github.com/OSrB2) | [<img src="https://avatars.githubusercontent.com/u/98442267?v=4" width=115> <br> <sub>Rainier Pironi</sub>](https://github.com/rainierpironi) 
 | :---: | :---: | :---: | :---: |
 
 
